@@ -1,0 +1,145 @@
+:root {
+  --font-color: #333;
+  --background-color: #ffffff;
+  --primary-button-color: #0078d4;
+  --primary-button-hover-color: #005fa3;
+  --delete-button-color: #d9534f;
+  --delete-button-hover-color: #b52c27;
+  --border-color: #ddd;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root, .app {
+  height: 100%;
+  font-family: "Arial", "Helvetica", sans-serif;
+  background-color: var(--background-color);
+  color: var(--font-color);
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+header {
+  flex-shrink: 0;
+  margin: 2rem 0;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  color: var(--font-color);
+}
+
+/* Todo List */
+.todo-list {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 30rem;
+  gap: 1rem;
+}
+
+/* Todo Item */
+.todo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background-color: #f9f9f9;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s;
+}
+
+.todo:hover {
+  background-color: #f1f1f1;
+}
+
+.delete-button,
+.edit-button {
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: bold;
+  padding: 0.5rem;
+  margin: 0 0.25rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s;
+}
+
+.delete-button {
+  background-color: var(--delete-button-color);
+}
+
+.delete-button:hover {
+  background-color: var(--delete-button-hover-color);
+}
+
+.edit-button {
+  background-color: var(--primary-button-color);
+}
+
+.edit-button:hover {
+  background-color: var(--primary-button-hover-color);
+}
+
+/* Create Todo */
+.create-todo {
+  display: flex;
+  width: 100%;
+  max-width: 30rem;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.create-todo input[type="text"] {
+  flex-grow: 1;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+.create-todo input[type="text"]:focus {
+  outline: none;
+  border-color: var(--primary-button-color);
+  box-shadow: 0 0 4px rgba(0, 120, 212, 0.3);
+}
+
+.create-todo button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: var(--primary-button-color);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.create-todo button:hover {
+  background-color: var(--primary-button-hover-color);
+}
+
+@media (max-width: 600px) {
+  .todo-list {
+    width: 90%;
+  }
+
+  .create-todo {
+    width: 90%;
+  }
+}
